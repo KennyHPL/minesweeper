@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Board	../minesweeper.py	/^class Board:$/;"	kind:class	line:24
+COLOR	../game.py	/^                COLOR = (0,255,0)$/;"	kind:variable	line:39
+COLOR	../game.py	/^                COLOR = (255, 0, 0)$/;"	kind:variable	line:37
+COLOR	../game.py	/^                COLOR = (255, 255, 0)$/;"	kind:variable	line:35
+COLOR	../game.py	/^            COLOR = (77,100,100)$/;"	kind:variable	line:33
+Cell	../minesweeper.py	/^class Cell:$/;"	kind:class	line:4
+HEIGHT	../game.py	/^HEIGHT = 20$/;"	kind:variable	line:9
+MARGIN	../game.py	/^MARGIN = 1$/;"	kind:variable	line:12
+OFFSET	../game.py	/^OFFSET = 100$/;"	kind:variable	line:10
+WIDTH	../game.py	/^WIDTH = 20$/;"	kind:variable	line:8
+__init__	../minesweeper.py	/^    def __init__(self, N, num_mines):$/;"	kind:member	line:28
+__init__	../minesweeper.py	/^    def __init__(self, left, top, width, height):$/;"	kind:member	line:9
+board	../game.py	/^board = ms.Board(board_size, 75)$/;"	kind:variable	line:5
+board_size	../game.py	/^board_size = 20$/;"	kind:variable	line:4
+clock	../game.py	/^clock = pg.time.Clock()$/;"	kind:variable	line:19
+done	../game.py	/^            done = True$/;"	kind:variable	line:25
+done	../game.py	/^done = False$/;"	kind:variable	line:20
+draw_cell	../minesweeper.py	/^    def draw_cell(self, screen, color):$/;"	kind:member	line:18
+game.py	../game.py	1;"	kind:file	line:1
+get_rect	../minesweeper.py	/^    def get_rect(self):$/;"	kind:member	line:21
+minesweeper.py	../minesweeper.py	1;"	kind:file	line:1
+ms	../game.py	/^import minesweeper as ms$/;"	kind:namespace	line:2
+myfont	../game.py	/^myfont = pg.font.SysFont('Comic Sans MS', 20)$/;"	kind:variable	line:15
+pg	../game.py	/^import pygame as pg$/;"	kind:namespace	line:1
+pg	../minesweeper.py	/^import pygame as pg$/;"	kind:namespace	line:2
+print_board	../minesweeper.py	/^    def print_board(self):$/;"	kind:member	line:66
+randint	../minesweeper.py	/^from random import randint, sample$/;"	kind:namespace	line:1
+rect	../game.py	/^            rect = board.rects[(r, c)]$/;"	kind:variable	line:32
+sample	../minesweeper.py	/^from random import randint, sample$/;"	kind:namespace	line:1
+screen	../game.py	/^screen = pg.display.set_mode((700, 700))$/;"	kind:variable	line:16
+text	../game.py	/^            text = myfont.render(str(board.board[r][c]), False, (0,0,0))$/;"	kind:variable	line:44
+textSurface	../game.py	/^    textSurface = myfont.render('Mouse Pos: {}'.format(pg.mouse.get_pos()), False, (0,0,0))$/;"	kind:variable	line:48

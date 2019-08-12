@@ -10,7 +10,6 @@ HEIGHT = 20
 OFFSET = 100
 # This sets the margin between each cell
 MARGIN = 1
-board.set_rects(WIDTH, HEIGHT, MARGIN, OFFSET)
 #pylint: disable=no-member
 pg.init()
 myfont = pg.font.SysFont('Comic Sans MS', 20)
@@ -27,29 +26,12 @@ while(not done):
       
     #Fill the screen with white
     screen.fill((255, 255, 255))
-
-    for r in range(board.num_cols):
-        for c in range(board.num_rows):
-            rect = board.rects[(r, c)]
-            COLOR = (77,100,100)
-            if(board.board[r][c] == 0):
-                COLOR = (255, 255, 0)
-            elif(board.board[r][c] == 'X'):
-                COLOR = (255, 0, 0)
-            if(rect.collidepoint(pg.mouse.get_pos())):
-                COLOR = (0,255,0)
-            pg.draw.rect(screen, COLOR,
-            [(MARGIN + WIDTH) * c + MARGIN + OFFSET,
-             (MARGIN + HEIGHT)* r + MARGIN + OFFSET,
-              WIDTH,HEIGHT])
-            text = myfont.render(str(board.board[r][c]), False, (0,0,0))
-            screen.blit(text, ((MARGIN + WIDTH) * c + OFFSET+MARGIN+7, (MARGIN + WIDTH) * r+ OFFSET+MARGIN+5))
     
     #print mouse position to screen
     textSurface = myfont.render('Mouse Pos: {}'.format(pg.mouse.get_pos()), False, (0,0,0))
     screen.blit(textSurface, (30,30))
     #Update the screen 30 FPS
     pg.display.flip()
-    clock.tick(60)
+    clock.tick(144)
 
 pg.quit()

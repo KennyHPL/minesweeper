@@ -1,5 +1,26 @@
 from random import randint, sample
 import pygame as pg
+
+class Cell:
+    '''
+    Creates a cell with width*height at with the top left corner at
+    (left, top) (x, y)
+    '''
+    def __init__(self, left, top, width, height):
+        self.is_mine = False
+        self.surrounding_mines = 0
+        self.left = left
+        self.top = top
+        self.width = width
+        self.height = height
+        self.rect = pg.Rect(left, top, width, height)
+    
+    def draw_cell(self, screen, color):
+        pg.draw.rect(screen, color, self.top, self.width, self.height)
+
+    def get_rect(self):
+        return self.rect
+
 class Board:
     '''
     Creates an N x N board with n mines generated
@@ -10,7 +31,7 @@ class Board:
         self.num_mines = num_mines
         self.mines = set()
         self.board = [[0 for x in range(self.num_rows)] for y in range(self.num_cols)]
-        self.rects = {}
+        self.cells = {}
 
         s = set()
         for i in range(self.num_rows):
@@ -21,7 +42,7 @@ class Board:
             pos = sample(s, 1)[0]
             s -= {pos}
             #pylint: disable=unsubscriptable-object
-            self.board[pos[0]][pos[1]] = 'X' 
+            self.board[pos[0]][pos[1]] = 'X'
         
         directions = {(-1, -1), (-1, 0), (-1, 1),
                       (0, -1), (0, 1),
@@ -47,11 +68,3 @@ class Board:
             for j in range(self.num_cols):
                 print(self.board[i][j], end=' ')
             print()
-    
-    def set_rects(self, WIDTH, HEIGHT, MARGIN, OFFSET):
-        for i in range(self.num_rows):
-            for j in range(self.num_cols):
-                self.rects.update({(i, j):
-                pg.Rect((MARGIN + WIDTH) * j + MARGIN + OFFSET,
-                        (MARGIN + HEIGHT)* i + MARGIN + OFFSET,
-                         WIDTH,HEIGHT)})
